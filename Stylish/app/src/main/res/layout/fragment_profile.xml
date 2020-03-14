@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileFragment"
+            type="student.rachel.stylish.fragment.profile.ProfileFragment" />
+
+        <variable
+            name="profileViewModel"
+            type="student.rachel.stylish.fragment.profile.ProfileViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color3f3a3a">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/circular"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/color3f3a3a"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/booFace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_round"
+                    app:imageUrl="@{profileViewModel.user.picture}"
+                    tools:src="@drawable/ic_launcher_round" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:text="@{profileViewModel.user.name}"
+                android:textColor="@color/colorffffff"
+                android:textSize="@dimen/size18"
+                app:layout_constraintStart_toEndOf="@+id/circular"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="21dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:text="@string/accumulator_price"
+                android:textColor="@color/color999999"
+                android:textSize="@dimen/size13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:text="@string/my_order"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lookAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:text="@string/look_all"
+                android:textColor="@color/color646464"
+                android:textSize="@dimen/size13"
+                app:layout_constraintBottom_toBottomOf="@+id/order"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/order" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/lookAll"
+                app:layout_constraintDimensionRatio="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lookAll" />
+
+            <ImageView
+                android:id="@+id/awaitPayImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_awaitingpayment"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/awaitShipImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/order" />
+
+            <TextView
+                android:id="@+id/awaitPayString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/await_pay"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/awaitPayImg"
+                app:layout_constraintStart_toStartOf="@+id/awaitPayImg"
+                app:layout_constraintTop_toBottomOf="@+id/awaitPayImg" />
+
+            <ImageView
+                android:id="@+id/awaitShipImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_awaitingshipment"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/shippedImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/awaitPayImg"
+                app:layout_constraintTop_toTopOf="@+id/awaitPayImg" />
+
+            <TextView
+                android:id="@+id/awaitShipString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/await_ship"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/awaitShipImg"
+                app:layout_constraintStart_toStartOf="@+id/awaitShipImg"
+                app:layout_constraintTop_toBottomOf="@+id/awaitShipImg" />
+
+            <ImageView
+                android:id="@+id/shippedImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_shipped"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/awaitReviewImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/awaitShipImg"
+                app:layout_constraintTop_toTopOf="@+id/awaitPayImg" />
+
+            <TextView
+                android:id="@+id/shippedString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/shipped"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/shippedImg"
+                app:layout_constraintStart_toStartOf="@+id/shippedImg"
+                app:layout_constraintTop_toBottomOf="@+id/shippedImg" />
+
+            <ImageView
+                android:id="@+id/awaitReviewImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_awaitingreview"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/exchangeImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/shippedImg"
+                app:layout_constraintTop_toTopOf="@+id/awaitPayImg" />
+
+            <TextView
+                android:id="@+id/awaitReviewString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/await_review"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/awaitReviewImg"
+                app:layout_constraintStart_toStartOf="@+id/awaitReviewImg"
+                app:layout_constraintTop_toBottomOf="@+id/awaitReviewImg" />
+
+            <ImageView
+                android:id="@+id/exchangeImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="34dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_exchange"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/awaitReviewImg"
+                app:layout_constraintTop_toTopOf="@+id/awaitPayImg" />
+
+            <TextView
+                android:id="@+id/exchangeString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/exchange"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/exchangeImg"
+                app:layout_constraintStart_toStartOf="@+id/exchangeImg"
+                app:layout_constraintTop_toBottomOf="@+id/exchangeImg" />
+
+            <TextView
+                android:id="@+id/moreService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:text="@string/more_service"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/awaitPayString" />
+
+            <ImageView
+                android:id="@+id/starImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_starred"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/bellImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moreService" />
+
+            <TextView
+                android:id="@+id/starString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/star"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/starImg"
+                app:layout_constraintStart_toStartOf="@+id/starImg"
+                app:layout_constraintTop_toBottomOf="@+id/starImg" />
+
+            <ImageView
+                android:id="@+id/bellImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_notification"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/refundImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/starImg"
+                app:layout_constraintTop_toTopOf="@+id/starImg" />
+
+            <TextView
+                android:id="@+id/bellString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/bell"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/bellImg"
+                app:layout_constraintStart_toStartOf="@+id/bellImg"
+                app:layout_constraintTop_toBottomOf="@+id/bellImg" />
+
+            <ImageView
+                android:id="@+id/refundImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_refunded"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/addressImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bellImg"
+                app:layout_constraintTop_toTopOf="@+id/starImg" />
+
+            <TextView
+                android:id="@+id/refundString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/refund"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/refundImg"
+                app:layout_constraintStart_toStartOf="@+id/refundImg"
+                app:layout_constraintTop_toBottomOf="@+id/refundImg" />
+
+            <ImageView
+                android:id="@+id/addressImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="34dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_address"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/refundImg"
+                app:layout_constraintTop_toTopOf="@+id/starImg" />
+
+            <TextView
+                android:id="@+id/addressString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/address"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/addressImg"
+                app:layout_constraintStart_toStartOf="@+id/addressImg"
+                app:layout_constraintTop_toBottomOf="@+id/addressImg" />
+
+
+            <ImageView
+                android:id="@+id/messageImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_customerservice"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/feedbackImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/starString" />
+
+            <TextView
+                android:id="@+id/messageString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/message"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/messageImg"
+                app:layout_constraintStart_toStartOf="@+id/messageImg"
+                app:layout_constraintTop_toBottomOf="@+id/messageImg" />
+
+            <ImageView
+                android:id="@+id/feedbackImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_systemfeedback"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/phoneBindingImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/messageImg"
+                app:layout_constraintTop_toTopOf="@+id/messageImg" />
+
+            <TextView
+                android:id="@+id/feedbackString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/feedback"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/feedbackImg"
+                app:layout_constraintStart_toStartOf="@+id/feedbackImg"
+                app:layout_constraintTop_toBottomOf="@+id/feedbackImg" />
+
+            <ImageView
+                android:id="@+id/phoneBindingImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_registercellphone"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/settingImg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/feedbackImg"
+                app:layout_constraintTop_toTopOf="@+id/messageImg" />
+
+            <TextView
+                android:id="@+id/phoneBindingString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/phone_binding"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/phoneBindingImg"
+                app:layout_constraintStart_toStartOf="@+id/phoneBindingImg"
+                app:layout_constraintTop_toBottomOf="@+id/phoneBindingImg" />
+
+            <ImageView
+                android:id="@+id/settingImg"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="34dp"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:src="@drawable/icons_24px_settings"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/phoneBindingImg"
+                app:layout_constraintTop_toTopOf="@+id/messageImg" />
+
+            <TextView
+                android:id="@+id/settingString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:letterSpacing="@dimen/spacing"
+                android:onClick="@{profileFragment::findRelativeToast}"
+                android:text="@string/setting"
+                android:textColor="@color/color3f3a3a"
+                android:textSize="@dimen/size13"
+                app:layout_constraintEnd_toEndOf="@+id/settingImg"
+                app:layout_constraintStart_toStartOf="@+id/settingImg"
+                app:layout_constraintTop_toBottomOf="@+id/settingImg" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

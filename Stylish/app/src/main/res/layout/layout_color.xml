@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="color"
+            type="student.rachel.stylish.object.Color" />
+        <variable
+            name="isSelected"
+            type="Boolean" />
+        <import type="android.view.View"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <View
+            android:id="@+id/view_outline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/color3f3a3a"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/view_border"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/colorffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/view_outline"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline" />
+        <View
+            android:id="@+id/view_color"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:colorAddBorder="@{color.code}"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_border"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@+id/view_border"
+            app:layout_constraintStart_toStartOf="@+id/view_border"
+            app:layout_constraintTop_toTopOf="@+id/view_border" />
+
+        <View
+            android:id="@+id/view_unselected"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1"
+            android:visibility="@{isSelected ? View.INVISIBLE:View.VISIBLE}"
+            app:colorAddBorder="@{color.code}"
+            app:layout_constraintBottom_toBottomOf="@id/view_outline"
+            app:layout_constraintEnd_toEndOf="@id/view_outline"
+            app:layout_constraintStart_toStartOf="@id/view_outline"
+            app:layout_constraintTop_toTopOf="@id/view_outline" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

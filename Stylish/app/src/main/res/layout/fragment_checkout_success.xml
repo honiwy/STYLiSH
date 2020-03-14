@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/success_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icons_80px_success02" />
+
+        <TextView
+            android:id="@+id/success_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/checkout_success"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/color3f3a3a"
+            android:textSize="@dimen/size18"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/success_logo" />
+
+        <TextView
+            android:id="@+id/success_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/after_success"
+            android:textAlignment="center"
+            android:textColor="@color/color3f3a3a"
+            android:textSize="@dimen/size15"
+            app:layout_constraintEnd_toEndOf="@+id/success_title"
+            app:layout_constraintStart_toStartOf="@+id/success_title"
+            app:layout_constraintTop_toBottomOf="@+id/success_title" />
+
+        <Button
+            android:id="@+id/button_keep_shopping"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:background="@color/color3f3a3a"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/keep_shopping"
+            android:textColor="@color/colorffffff"
+            android:textSize="@dimen/size16"
+            app:layout_constraintDimensionRatio="6.8333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

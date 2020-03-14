@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Stylish</string>
+    <!-- fragment title -->
+    <string name="catalog_string">型錄</string>
+    <string name="cart_string">購物車</string>
+    <string name="chechout_string">結帳</string>
+    <string name="profile_string">個人</string>
+    <!-- catalog title -->
+    <string name="women">女裝</string>
+    <string name="men">男裝</string>
+    <string name="accessory">配件</string>
+    <string name="add_cart">加入購物車</string>
+    <string name="color">顏色</string>
+    <string name="size">尺寸</string>
+    <string name="stock">庫存</string>
+    <string name="texture">材質</string>
+    <string name="washing">洗滌</string>
+    <string name="origin">產地</string>
+    <string name="note">備註</string>
+    <!-- checkout fragment -->
+    <string name="checkout_title">結帳商品</string>
+    <string name="receive_info">收件資訊</string>
+    <string name="receiver">收件人姓名</string>
+    <string name="email">Email</string>
+    <string name="phone_num">手機號碼</string>
+    <string name="phone_example">例:0912345678</string>
+    <string name="delivery_time">配送時間</string>
+    <string name="morning_time">08:00&#8211;12:00</string>
+    <string name="afternoon_time">14:00&#8211;18:00</string>
+    <string name="any_time">不指定</string>
+    <string name="payment_detail">付款詳情</string>
+    <string name="payment_title">選擇付款方式</string>
+    <string-array name="pay_method">
+        <item>貨到付款</item>
+        <item>信用卡付款</item>
+    </string-array>
+    <string name="ready_checkout">確定結帳</string>
+    <string name="product_total_amount">商品總金額</string>
+    <string name="shipment_total_amount">運費總金額</string>
+    <string name="total_amount">總計(%d樣產品)</string>
+    <string name="global_app_id">12348</string>
+    <string name="global_app_key">app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF</string>
+    <string name="global_test_partnerKey">partner_6ID1DoDlaPrfHw6HBZsULfTYtDmWs0q0ZZGKMBpp4YICWBxgK97eK3RM</string>
+    <string name="global_test_merchant_id">GlobalTesting_CTBC</string>
+    <!-- checkout success fragment -->
+    <string name="checkout_result">結帳結果</string>
+    <string name="checkout_success">結帳成功</string>
+    <string name="after_success">我們收到您的訂單了！將以最快的速度為您安排出貨 \u25E6</string>
+    <string name="keep_shopping">再去逛逛</string>
+    <!-- cart fragment -->
+    <string name="remove">移除</string>
+    <string name="checkout">前往結帳</string>
+    <!-- detail fragment -->
+    <string name="choose_color">選擇顏色</string>
+    <string name="choose_size">選擇尺寸</string>
+    <string name="choose_quantity">選擇數量</string>
+    <string name="stock_remain_num">庫存:%d</string>
+    <string name="out_of_stock">庫存不足</string>
+    <!-- profile fragment -->
+    <string name="profile_name">小安君</string>
+    <string name="accumulator_price">累計消費 NT$91800</string>
+    <string name="my_order">我的訂單</string>
+    <string name="look_all">查看全部</string>
+    <string name="await_pay">待付款</string>
+    <string name="await_ship">待出貨</string>
+    <string name="shipped">待簽收</string>
+    <string name="await_review">待評價</string>
+    <string name="exchange">退換貨</string>
+
+    <string name="more_service">更多服務</string>
+    <string name="star">收藏</string>
+    <string name="bell">貨到通知</string>
+    <string name="refund">帳戶退款</string>
+    <string name="address">地址</string>
+    <string name="message">客服訊息</string>
+    <string name="feedback">系統回饋</string>
+    <string name="phone_binding">手機綁定</string>
+    <string name="setting">設定</string>
+    <!-- facebook -->
+    <string name="facebook_app_id">455354135123369</string>
+    <string name="fb_login_protocol_scheme">fb455354135123369</string>
+    <string name="login_title">請先登入會員</string>
+    <string name="login_description">登入會員後即可完成結帳 \u25E6</string>
+    <string name="button_detail">Facebook登入</string>
+    <string name="login_success">登入成功</string>
+    <!-- desire -->
+    <string name="add_cart_success">加入成功</string>
+    <string name="product_name">1.商品名稱:</string>
+    <string name="product_color">2.商品色碼:</string>
+    <string name="product_size">3.商品尺寸:</string>
+    <string name="product_amount">4.欲購買數量:</string>
+</resources>

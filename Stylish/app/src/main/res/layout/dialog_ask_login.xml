@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainActivity"
+            type="student.rachel.stylish.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/upper_round_layout">
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/login_title"
+            android:textColor="@color/color3f3a3a"
+            android:textSize="@dimen/size18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loginDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/login_description"
+            android:textColor="@color/color3f3a3a"
+            android:textSize="@dimen/size15"
+            app:layout_constraintEnd_toEndOf="@+id/loginTitle"
+            app:layout_constraintStart_toStartOf="@+id/loginTitle"
+            app:layout_constraintTop_toBottomOf="@+id/loginTitle" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorcccccc"
+            app:layout_constraintEnd_toEndOf="@+id/loginTitle"
+            app:layout_constraintStart_toStartOf="@+id/loginTitle"
+            app:layout_constraintTop_toBottomOf="@+id/loginDescription" />
+
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorFacebook"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/button_detail"
+            android:textAllCaps="false"
+            android:textColor="@color/colorffffff"
+            android:textSize="@dimen/size16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="6.8333"
+            app:layout_constraintEnd_toEndOf="@+id/loginTitle"
+            app:layout_constraintStart_toStartOf="@+id/loginTitle"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <Button
+            android:id="@+id/closeButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/icons_24px_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="variant"
+            type="student.rachel.stylish.object.Variant" />
+
+        <variable
+            name="isSelected"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_outline"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/color3f3a3a"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_border"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/colorffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/view_outline"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline" />
+
+        <View
+            android:id="@+id/view_small"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorf0f0f0"
+            app:layout_constraintBottom_toBottomOf="@+id/view_outline"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline" />
+
+        <View
+            android:id="@+id/view_big"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/colorf0f0f0"
+            android:visibility="@{isSelected ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/view_outline"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline" />
+
+        <TextView
+            android:id="@+id/textSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{variant.size}"
+            android:textColor="@{variant.stock == 0 ? @color/color3f3a3a40 : @color/color3f3a3a}"
+            android:textSize="@dimen/size16"
+            app:layout_constraintBottom_toBottomOf="@+id/view_outline"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline" />
+
+        <ImageView
+            android:id="@+id/image_strike"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/image_strikethrough"
+            android:visibility="@{variant.stock == 0 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/view_big"
+            app:layout_constraintEnd_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toEndOf="@+id/view_outline"
+            app:layout_constraintStart_toStartOf="@+id/view_outline"
+            app:layout_constraintTop_toTopOf="@+id/view_outline"
+            app:srcCompat="@drawable/image_strikethrough" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="desireProduct"
+            type="student.rachel.stylish.local.DesireProduct" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="119dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{desireProduct.mainImage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_placeholder" />
+
+        <TextView
+            android:id="@+id/product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{desireProduct.title}"
+            android:textSize="@dimen/size15"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/color3f3a3a"
+            app:layout_constraintStart_toEndOf="@+id/product_image"
+            app:layout_constraintTop_toTopOf="@+id/product_image" />
+
+        <TextView
+            android:id="@+id/button_remove"
+
+            android:layout_width="35dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/remove"
+            android:textColor="@color/color888888"
+            android:textSize="@dimen/size15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/product_image" />
+
+        <View
+            android:id="@+id/view_color"
+            android:layout_width="22dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:colorAddBorder="@{desireProduct.color.code}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="@+id/product_title"
+            app:layout_constraintTop_toBottomOf="@+id/product_title" />
+
+        <View
+            android:id="@+id/view_border"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/colorcccccc"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_color"
+            app:layout_constraintStart_toEndOf="@+id/view_color"
+            app:layout_constraintTop_toTopOf="@+id/view_color" />
+
+        <TextView
+            android:id="@+id/text_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{desireProduct.size}"
+            android:textSize="@dimen/size15"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/color3f3a3a"
+            app:layout_constraintStart_toEndOf="@+id/view_border"
+            app:layout_constraintTop_toTopOf="@+id/view_color" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:priceNT="@{desireProduct.price}"
+            android:textSize="@dimen/size15"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/color3f3a3a"
+            app:layout_constraintEnd_toEndOf="@+id/button_remove"
+            app:layout_constraintTop_toTopOf="@+id/view_color" />
+
+        <ImageButton
+            android:id="@+id/plus_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/button_border"
+            android:scaleType="centerInside"
+            android:tint="@{(desireProduct.qty >= desireProduct.stock)? @color/color3f3a3a40 : @color/color3f3a3a}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/minus_button"
+            app:srcCompat="@drawable/ic_add" />
+
+        <TextView
+            android:id="@+id/text_quantity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_border"
+            android:textAlignment="center"
+            android:text="@{String.valueOf(desireProduct.qty)}"
+            android:textSize="@dimen/size16"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/minus_button"
+            app:layout_constraintEnd_toStartOf="@+id/plus_button"
+            app:layout_constraintStart_toEndOf="@+id/minus_button"
+            app:layout_constraintTop_toTopOf="@+id/minus_button" />
+
+        <ImageButton
+            android:id="@+id/minus_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_border"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_sub"
+            android:tint="@{(desireProduct.qty &lt;= 1)? @color/color3f3a3a40 : @color/color3f3a3a}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="@+id/product_title"
+            app:layout_constraintTop_toBottomOf="@+id/view_color" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

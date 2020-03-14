@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="student.rachel.stylish.fragment.cart.checkout.CheckoutViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_border_up"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorcccccc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans_bold"
+            android:letterSpacing="@dimen/spacing"
+            android:text="@string/receive_info"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/color3f3a3a"
+            android:textSize="@dimen/size18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_border_up" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorf5f5f5"
+            android:ems="10"
+            android:fontFamily="@font/noto_sans"
+            android:hint="@string/receiver"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/size12"
+            android:paddingTop="@dimen/size16"
+            android:paddingEnd="@dimen/size12"
+            android:paddingBottom="@dimen/size16"
+            android:text="@={viewModel.name}"
+            android:textColor="@color/color646464"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="@+id/text_info"
+            app:layout_constraintStart_toStartOf="@+id/text_info"
+            app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@color/colorf5f5f5"
+            android:ems="10"
+            android:fontFamily="@font/noto_sans"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/size12"
+            android:paddingTop="@dimen/size16"
+            android:paddingEnd="@dimen/size12"
+            android:paddingBottom="@dimen/size16"
+            android:text="@={viewModel.email}"
+            android:textColor="@color/color646464"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="@+id/edit_name"
+            app:layout_constraintStart_toStartOf="@+id/text_info"
+            app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@color/colorf5f5f5"
+            android:ems="10"
+            android:fontFamily="@font/noto_sans"
+            android:hint="@string/phone_num"
+            android:inputType="phone"
+            android:paddingStart="@dimen/size12"
+            android:paddingTop="@dimen/size16"
+            android:paddingEnd="@dimen/size12"
+            android:paddingBottom="@dimen/size16"
+            android:text="@={viewModel.phone}"
+            android:textColor="@color/color646464"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="@+id/text_info"
+            app:layout_constraintStart_toStartOf="@+id/text_info"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+
+        <EditText
+            android:id="@+id/edit_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@color/colorf5f5f5"
+            android:ems="10"
+            android:fontFamily="@font/noto_sans"
+            android:hint="@string/address"
+            android:inputType="textPostalAddress"
+            android:paddingStart="@dimen/size12"
+            android:paddingTop="@dimen/size16"
+            android:paddingEnd="@dimen/size12"
+            android:paddingBottom="@dimen/size16"
+            android:text="@={viewModel.address}"
+            android:textColor="@color/color646464"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="@+id/edit_phone"
+            app:layout_constraintStart_toStartOf="@+id/text_info"
+            app:layout_constraintTop_toBottomOf="@+id/edit_phone" />
+
+        <TextView
+            android:id="@+id/phone_example"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/phone_example"
+            android:textColor="@color/color646464"
+            android:textSize="@dimen/size14"
+            app:layout_constraintStart_toStartOf="@+id/edit_phone"
+            app:layout_constraintTop_toBottomOf="@+id/edit_phone" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_address">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/delivery_time"
+                android:textColor="@color/color646464"
+                android:textSize="@dimen/size14" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_morning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/morning_time"
+                android:textColor="@color/color646464"
+                android:textSize="@dimen/size16" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_afternoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/afternoon_time"
+                android:textColor="@color/color646464"
+                android:textSize="@dimen/size16" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_anytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/any_time"
+                android:textColor="@color/color646464"
+                android:textSize="@dimen/size16" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/view_border_down"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorcccccc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

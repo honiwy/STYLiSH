@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stylish</string>
+    <!-- fragment title -->
+    <string name="catalog_string">Catalog</string>
+    <string name="cart_string">Cart</string>
+    <string name="chechout_string">Checkout</string>
+    <string name="profile_string">Profile</string>
+    <!-- catalog title -->
+    <string name="women">Women</string>
+    <string name="men">Men</string>
+    <string name="accessory">Accessory</string>
+    <string name="add_cart">Add to cart</string>
+    <string name="color">Color</string>
+    <string name="size">Size</string>
+    <string name="stock">Stock</string>
+    <string name="texture">Texture</string>
+    <string name="washing">Washing</string>
+    <string name="origin">Origin</string>
+    <string name="note">Note</string>
+    <!-- checkout fragment -->
+    <string name="checkout_title">Checkout Products</string>
+    <string name="receive_info">Receiver Information</string>
+    <string name="receiver">Receiver Name</string>
+    <string name="email">Email</string>
+    <string name="phone_num">Phone</string>
+    <string name="phone_example">EX:0912345678</string>
+    <string name="delivery_time">Delivery time</string>
+    <string name="morning_time">08:00&#8211;12:00</string>
+    <string name="afternoon_time">14:00&#8211;18:00</string>
+    <string name="any_time">Anytime</string>
+    <string name="payment_detail">Payment detail</string>
+    <string name="payment_title">Choose payment method</string>
+    <string-array name="pay_method">
+        <item>Pay when delivered</item>
+        <item>Pay by credit card</item>
+    </string-array>
+    <string name="ready_checkout">Confirm</string>
+    <string name="product_total_amount">Product price</string>
+    <string name="shipment_total_amount">Shipping price</string>
+    <string name="total_amount">Total(%d items)</string>
+    <string name="global_app_id">12348</string>
+    <string name="global_app_key">app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF</string>
+    <string name="global_test_partnerKey">partner_6ID1DoDlaPrfHw6HBZsULfTYtDmWs0q0ZZGKMBpp4YICWBxgK97eK3RM</string>
+    <string name="global_test_merchant_id">GlobalTesting_CTBC</string>
+    <!-- checkout success fragment -->
+    <string name="checkout_result">Checkout result</string>
+    <string name="checkout_success">Checkout success</string>
+    <string name="after_success">The order is confirmed! We will mail the orders to you as soon as possible \u25E6</string>
+    <string name="keep_shopping">Continue shopping</string>
+    <!-- cart fragment -->
+    <string name="remove">Rmv</string>
+    <string name="checkout">Checkout</string>
+    <!-- detail fragment -->
+    <string name="choose_color">Choose color</string>
+    <string name="choose_size">Choose size</string>
+    <string name="choose_quantity">Choose quantity</string>
+    <string name="stock_remain_num">Stock:%d</string>
+    <string name="out_of_stock">Out of stock</string>
+    <!-- profile fragment -->
+    <string name="profile_name">An Ann</string>
+    <string name="accumulator_price">Accumulated price NT$91800</string>
+    <string name="my_order">My order</string>
+    <string name="look_all">Look all</string>
+    <string name="await_pay">Await pay</string>
+    <string name="await_ship">Await ship</string>
+    <string name="shipped">Shipped</string>
+    <string name="await_review">Await review</string>
+    <string name="exchange">Exchange</string>
+
+    <string name="more_service">More service</string>
+    <string name="star">Star</string>
+    <string name="bell">Bell</string>
+    <string name="refund">Refund</string>
+    <string name="address">Address</string>
+    <string name="message">Message</string>
+    <string name="feedback">Feedback</string>
+    <string name="phone_binding">Phone binding</string>
+    <string name="setting">Setting</string>
+    <!-- facebook -->
+    <string name="facebook_app_id">455354135123369</string>
+    <string name="fb_login_protocol_scheme">fb455354135123369</string>
+    <string name="login_title">Please log in.</string>
+    <string name="login_description">You can checkout the order after log in.</string>
+    <string name="button_detail">Facebook sign in</string>
+    <string name="login_success">Sign in success</string>
+    <!-- desire -->
+    <string name="add_cart_success">Added success</string>
+    <string name="product_name">1.商品名稱:</string>
+    <string name="product_color">2.商品色碼:</string>
+    <string name="product_size">3.商品尺寸:</string>
+    <string name="product_amount">4.欲購買數量:</string>
+</resources>

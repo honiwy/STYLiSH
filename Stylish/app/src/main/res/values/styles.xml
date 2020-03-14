@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorffffff</item>
+        <item name="colorPrimaryDark">@color/colorffffff</item>
+    </style>
+    <style name="ProductName" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/size15</item>
+        <item name="android:letterSpacing">@dimen/spacing</item>
+        <item name="android:textColor">@color/color3f3a3a</item>
+    </style>
+    <style name="Catagory" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/size16</item>
+        <item name="android:letterSpacing">@dimen/spacing</item>
+        <item name="android:textColor">@color/color3f3a3a</item>
+        <item name="android:fontFamily">android:fontFamily="@font/noto_sans"</item>
+    </style>
+</resources>
